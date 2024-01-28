@@ -1,0 +1,140 @@
+		JDK JVM AND JRE
+		===============
+#Fullforms:
+-----------
+JDK: JAVA DEVELOPMENT KIT
+JVM: JAVA VIRTUAL MACHINE
+JRE: JAVA RUNTIME ENVIRONMENT
+
+#What contains what:
+--------------------
+JDK: JRE + DEVELOPMENT TOOLS
+JRE: JVM + JAVA PACKAGE CLASSES + RUNTIME LIBRARIES
+
+#Platform Dependency:
+---------------------
+JDK: PLATFORM DEPENDENT
+JVM: PLATFORM DEPENDENT
+BYTECODE: PLATFORM INDEPENDENT
+
+#Important points to remember:
+------------------------------
+1)JVM: converts byte code into machine code
+2)JRE: responsible to run java program
+3)JDK: used to Compile, Debug and execute
+4)JIT: used to optimise byte code into machine code
+
+#Roles:
+-------
+I)JDK:
+------
+-The JDK is a software development kit used for developing Java applications.
+-It includes the JRE, an interpreter/loader (Java), a compiler (javac), an archiver (jar), a documentation generator (Javadoc), and other tools needed for Java development.
+-If you want to write and compile Java code, you need to install the JDK.
+
+II)JRE:
+-------
+-The JRE is a set of software tools used for developing Java applications and running Java programs.
+-It includes the Java Virtual Machine (JVM), libraries, and other components necessary for running Java applications.
+-If you only want to run Java applications on your system, you typically need to install the JRE.
+
+III)JVM:
+--------
+-The JVM is a virtual machine that enables a computer to run Java programs.
+-It provides an execution environment for Java bytecode, which is the compiled form of Java source code.
+-The JVM is platform-independent, allowing Java programs to run on any device or operating system that has a compatible JVM installed.
+
+---------------------------------------------------------
+#Java Bytecode:
+---------------
+-Java source code is compiled into an intermediate form called Java bytecode.
+-This bytecode is platform-independent, meaning it can be executed on any device or operating system that has a compatible Java Virtual Machine (JVM).
+-This is one of the key features of Java that enables "write once, run anywhere" (WORA) functionality.
+---------------------------------------------------------
+#flow of execution:
+-------------------
+source code(.java) ---> byte code(.class)--->JVM--->Platform
+
+-JAVA compiler first compiles the source code to BYTECODE 
+-then JVM translates bytecode to MACHINE CODE using
+INTERPRETERS and JIT Compiler(just in time compiler).
+
+-JAVA program run in SAND BOX.
+---------------------------------------------------------
+		#JIT compiler:
+		--------------
+-JIT stands for "Just-In-Time,"
+-a JIT compiler is a component of the Java Virtual Machine (JVM)
+-It plays a crucial role in the execution of Java programs.
+
+#Role:
+------
+1)Compilation Process in Java:
+
+-When you write Java code, it is first compiled into an intermediate form known as Java bytecode. This bytecode is not machine code specific to any particular computer architecture; instead, it is a set of instructions that can be executed by the Java Virtual Machine (JVM).
+
+2)Execution Process:
+
+-here are two main approaches to executing a program: interpretation and compilation.
+-Interpretation involves the JVM reading and executing the bytecode line by line, translating each bytecode instruction into machine code as it goes.
+-Compilation involves translating the entire program into machine code before execution.
+---------------------------------------------------------
+		JVM ARCHITECTURE
+		----------------
+#COMPONENTS:
+------------
+1)Class Loader:
+---------------
+-Responsible for loading Java classes into the memory of the JVM.
+-there are three typrs of class loaders:
+	i)BOOTSTRAP CLASS LOADER
+	ii)EXTENSTION CLASS LOADER
+	iii)APPLICATION CLASS LOADER
+
+-The loading, linking, and initialization phases are part of the class loading process.
+
+I)Loading:
+----------
+-The class loader is invoked to load a class.
+-The class loader looks for the class file in the classpath.
+-If the class file is found, it is loaded into memory.
+-The loaded class file is then stored in the Method Area of the JVM.
+
+II)Linking:
+-----------
+i)Verification:
+
+The JVM checks whether the loaded class file is properly formatted and adheres to the Java language specifications. This is to ensure that the loaded bytecode is valid and does not violate any security constraints.
+
+ii)Preparation:
+Static variables (class variables) are assigned default values. This is done to initialize the memory space for these variables.
+
+iii)Resolution:
+Symbolic references in the class file are replaced with direct references. This includes resolving references to other classes, fields, and methods.
+
+
+2)MEMORY AREA:
+--------------
+i)Method Area:
+--------------
+-this area stores class-level structures such as class definitions, method data, and static variables.
+
+ii)Heap:
+--------
+-The heap is the runtime data area where objects and their instance variables are allocated.
+
+iii)Stack:
+----------
+-Each thread in a Java application has its own stack, which stores local variables, method call information, and partial results.
+
+3)Execution Engine:
+-------------------
+-it is the main engine which executes the program
+-it contains:
+	i)Interpreter -> executes high level code
+	ii)JIT Compiler
+	iii)GARBAGE Collector
+
+4)Native Interface:
+-------------------
+-Allows Java code to interact with applications and libraries written in other languages (e.g., C, C++) uses JAVA NATIVE INTERFACE(JNI).
